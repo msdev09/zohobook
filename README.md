@@ -50,7 +50,7 @@ DB_PASSWORD=your_database_password
 ZOHO_CLIENT_ID=your_client_id
 ZOHO_CLIENT_SECRET=your_client_secret
 ZOHO_ORGANIZATION_ID=your_organization_id
-ZOHO_REFRESH_TOKEN=your_refresh_token
+ZOHO_REFRESH_TOKEN=KEEP it blank , it will auto generate in later step
 ZOHO_REDIRECT_URI=http://localhost:8000/zoho/callback
 ZOHO_DATA_CENTER=com  # e.g., 'in', 'com', 'eu', 'au' depending on your Zoho account
 ```
@@ -103,7 +103,27 @@ Follow these instructions to get the application running on a fresh environment.
 
 ## 4. That's All, 
 
-   Please navigate to `http://localhost:8000/report` to view the report. 
-   You can see Sync Data button in that report page click on that button to sync data from Zoho Books. Please click to sync. 
-   
-   **Important Note:** It may take several minutes to sync data from Zoho Books depending on the data volume. 
+   ## Accessing the Report
+
+   Open the following URL in your browser to view the report:
+
+   `http://localhost:8000/report`
+
+   ## Zoho Authorization (First-Time Setup)
+
+   If this is your first time accessing the application and the `ZOHO_REFRESH_TOKEN` is not configured in the `.env` file, you will be automatically redirected to the Zoho authorization page.
+
+   Please follow these steps:
+
+   1. Authorize the application using your Zoho account.
+   2. After successful authorization, Zoho will redirect you to the configured callback URL.
+   3. The authorization `code` received in the callback URL will be used to automatically generate and save the refresh token in the `.env` file.
+
+   ## Syncing Data from Zoho Books
+
+   On the report page, you will find a **Sync Data** button.
+
+   Click this button to fetch and synchronize data from Zoho Books.
+
+   > **Important:**  
+   > The synchronization process may take several minutes depending on the volume of data available in your Zoho Books account.
