@@ -101,32 +101,9 @@ Follow these instructions to get the application running on a fresh environment.
 
 ---
 
-## 4. How to Get a Refresh Token from Zoho Books
+## 4. That's All, 
 
-To interact with the Zoho Books API smoothly, you must obtain a long-lived **Refresh Token**. We have automated this process directly within the application!
-
-1. **Create a Zoho API Client:**
-   - Go to the [Zoho API Console](https://api-console.zoho.com/).
-   - Click on **Add Client** and select **Server-based Applications**.
-   - Fill in a Client Name and set the **Authorized Redirect URIs** to `http://localhost:8000/zoho/callback`.
-   - Save the configuration. You will receive a **Client ID** and **Client Secret**.
-
-2. **Prepare your credentials:**
-   You will put the `ZOHO_CLIENT_ID` and `ZOHO_CLIENT_SECRET` into your `.env` file during the installation steps above. Also ensure `ZOHO_REDIRECT_URI` is set to `http://localhost:8000/zoho/callback`.
+   Please navigate to `http://localhost:8000/report` to view the report. 
+   You can see Sync Data button in that report page click on that button to sync data from Zoho Books. Please click to sync. 
    
-   *Note: You can find your Organization ID by logging into Zoho Books normally and looking at the URL or under Settings -> Organization Profile. Add this to `ZOHO_ORGANIZATION_ID`.*
-
-3. **Generate the Refresh Token Automagically:**
-   With your development server running (`php artisan serve`), simply navigate to the following URL in your browser:
-   ```text
-   http://localhost:8000/zoho/connect
-   ```
-   - You will be redirected to Zoho to authorize the application.
-   - Once authorized, Zoho redirects back to your application.
-   - The application automatically exchanges the authorization code for a Refresh Token and securely updates your `.env` file! After authorization, it will redirect you to the report dashboard and automatically begin the delta sync of your Zoho records.
-
----
-
-## 5. That's All, 
-
-   Please navigate to `http://localhost:8000/report` to view the report.
+   **Important Note:** It may take several minutes to sync data from Zoho Books depending on the data volume. 
