@@ -124,3 +124,9 @@ To interact with the Zoho Books API smoothly, you must obtain a long-lived **Ref
    - You will be redirected to Zoho to authorize the application.
    - Once authorized, Zoho redirects back to your application.
    - The application automatically exchanges the authorization code for a Refresh Token and securely updates your `.env` file! After authorization, it will redirect you to the report dashboard and automatically begin the delta sync of your Zoho records.
+
+---
+
+## 5. That's All, 
+
+   Please navigate to `http://localhost:8000/report` to view the report.
